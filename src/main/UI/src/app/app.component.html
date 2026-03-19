@@ -23,16 +23,21 @@
   <div class="scene" id="welcome">
     <article class="content">
 
- 
+
 
       <div class="row">
-        <div class=""col-12>
+        <div class="col-12">
           <div class="gallery">
             <img src="assets/images/intro_room.jpg" alt="Intro Gallery Room Sample Pictures">
             <img src="assets/images/intro_pool.jpg" alt="Intro Gallery Pool Sample Pictures">
             <img src="assets/images/intro_dining.jpg" alt="Intro Gallery Dining Sample Pictures">
             <img src="assets/images/intro_attractions.jpg" alt="Intro Gallery Attractions Sample Pictures">
             <img class="hidesm" src="assets/images/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures">
+          </div>
+          <div class="col-12 text-center mb-4">
+            <h4 *ngFor="let message of welcomeMessages" class="text-primary">
+              {{message}}
+            </h4>
           </div>
           <h1>Book a Room</h1>
           <form class="form-horizontal" [formGroup]="roomsearch"
@@ -58,7 +63,7 @@
               </div>
               </form>
 
-        
+
         </div>
       </div>
 

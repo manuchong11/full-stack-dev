@@ -19,6 +19,8 @@ export class AppComponent implements OnInit{
 
   private baseURL:string='http://localhost:8080';
 
+  public welcomeMessages: string[] = [];
+
   private getUrl:string = this.baseURL + '/room/reservation/v1/';
   private postUrl:string = this.baseURL + '/room/reservation/v1';
   public submitted!:boolean;
@@ -33,6 +35,11 @@ export class AppComponent implements OnInit{
         checkin: new FormControl(' '),
         checkout: new FormControl(' ')
       });
+      this.httpClient.get<string[]>(this.baseURL + '/api/welcome').subscribe(
+        messages => {
+          this.welcomeMessages = messages;
+        }
+      )
 
  //     this.rooms=ROOMS;
 
@@ -115,6 +122,9 @@ export class ReserveRoomRequest {
     this.checkin = checkin;
     this.checkout = checkout;
   }
+
+
+
 }
 
 /*
