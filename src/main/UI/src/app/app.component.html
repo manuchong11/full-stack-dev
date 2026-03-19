@@ -39,6 +39,12 @@
               {{message}}
             </h4>
           </div>
+          <div class="col-12 text-center mb-4">
+            <h5>Online Live Presentation</h5>
+            <span *ngFor="let time of presentationTimes" class="mx-2">
+              {{time}}
+            </span>
+          </div>
           <h1>Book a Room</h1>
           <form class="form-horizontal" [formGroup]="roomsearch"
           (ngSubmit)="onSubmit(roomsearch)">

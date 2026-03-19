@@ -20,6 +20,7 @@ export class AppComponent implements OnInit{
   private baseURL:string='http://localhost:8080';
 
   public welcomeMessages: string[] = [];
+  public presentationTimes: string[]  = [];
 
   private getUrl:string = this.baseURL + '/room/reservation/v1/';
   private postUrl:string = this.baseURL + '/room/reservation/v1';
@@ -39,7 +40,12 @@ export class AppComponent implements OnInit{
         messages => {
           this.welcomeMessages = messages;
         }
-      )
+      );
+      this.httpClient.get<string[]>(this.baseURL + '/api/time-conversion').subscribe(
+        times => {
+          this.presentationTimes = times;
+        }
+      );
 
  //     this.rooms=ROOMS;
 
