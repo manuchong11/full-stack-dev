@@ -1,4 +1,4 @@
-FROM maven:3.8.5-openjdk-17 AS build
+FROM maven:3.8.5-eclipse-temurin-17 AS build
 WORKDIR /app
 
 RUN curl -sl https://deb.nodesource.com/setup_18.x | bash - && \
@@ -11,7 +11,7 @@ COPY src ./src
 
 RUN mvn clean package -DskipTests
 
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 COPY --from=build /app/target/*.jar app.jar
