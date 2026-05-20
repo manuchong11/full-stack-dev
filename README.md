@@ -117,7 +117,4 @@ Then open the Angular app at `http://localhost:4200`.
 - The backend uses H2 for persistence and auto-creates or updates schema via Hibernate.
 - Reservation update and delete endpoints are stubbed and may require further implementation.
 
-## License
-
-This project does not include a license declaration. Add one if you intend to share or distribute the code.
 
